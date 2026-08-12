@@ -1,0 +1,62 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "Ahmed Ali",
+      "phone": "71 234 567",
+      "currentBalance": 0,
+      "lastPaymentDate": "2026-08-09",
+      "status": "Unpaid"
+    },
+    {
+      "id": "2",
+      "name": "Mahmoud Hassan",
+      "phone": "70 123 456",
+      "currentBalance": 0,
+      "lastPaymentDate": "2026-08-09",
+      "status": "Paid"
+    },
+    {
+      "id": "3",
+      "name": "Ali Khaled",
+      "phone": "76 987 654",
+      "currentBalance": 0,
+      "lastPaymentDate": "2024-05-05",
+      "status": "Paid"
+    },
+    {
+      "id": "4",
+      "name": "Sara Salameh",
+      "phone": "71 111 222",
+      "currentBalance": 0,
+      "lastPaymentDate": "2026-08-09",
+      "status": "Paid"
+    },
+    {
+      "id": "5",
+      "name": "Omar Darwish",
+      "phone": "70 555 444",
+      "currentBalance": 0,
+      "lastPaymentDate": "2024-05-03",
+      "status": "Paid"
+    },
+    {
+      "id": "6",
+      "name": "Nadine Saab",
+      "phone": "71 777 888",
+      "currentBalance": 0,
+      "lastPaymentDate": "2026-08-09",
+      "status": "Paid"
+    },
+    {
+      "id": "7",
+      "name": "Hassan Mortada",
+      "phone": "70 333 111",
+      "currentBalance": 0,
+      "lastPaymentDate": "2026-08-10",
+      "status": "Paid"
+    }
+  ],
+  "transactions": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
