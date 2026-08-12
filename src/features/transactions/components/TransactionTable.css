@@ -1,0 +1,22 @@
+.txn-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+.txn-type--recharge {
+  color: var(--color-danger);
+}
+.txn-type--payment {
+  color: var(--color-success);
+}
+
+.txn-remaining--unpaid {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+.txn-remaining--paid {
+  color: var(--color-success);
+  font-weight: 600;
+}

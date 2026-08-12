@@ -1,0 +1,35 @@
+:root {
+  /* ── Color Palette ────────────────────────── */
+  --color-primary: #2563eb;       /* Sleek Blue */
+  --color-primary-dark: #1d4ed8;
+  --color-success: #10b981;       /* Emerald Green */
+  --color-danger: #ef4444;        /* Crimson Red */
+  --color-warning: #f59e0b;       /* Amber Orange */
+  
+  --color-bg-page: #f8fafc;       /* Off-white background */
+  --color-border: #e2e8f0;        /* Slate border */
+  --color-border-light: #f1f5f9;
+  --color-bg-hover: #f1f5f9;
+  
+  --color-text: #0f172a;          /* Slate-900 */
+  --color-text-secondary: #475569;/* Slate-600 */
+  --color-text-muted: #94a3b8;    /* Slate-400 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

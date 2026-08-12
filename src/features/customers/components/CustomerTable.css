@@ -1,0 +1,9 @@
+.customer-table__balance {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.customer-table__chevron {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
