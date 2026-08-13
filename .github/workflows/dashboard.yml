@@ -15,22 +15,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'npm'
+      - name: Install dependencies
+        run: yarn install
 
-      - name: Install Dependencies & Build
-        run: |
-          npm ci
-          npm run build
+      - name: Build
+        run: yarn build
           
       - name: Deploy to Cloudflare
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'my-react-app' # EXACT match to the project name in step 1
-          directory: 'dist' # Use 'build' if using Create React App; 'dist' for Vite
+          projectName: 'ledger_app'
+          directory: 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
