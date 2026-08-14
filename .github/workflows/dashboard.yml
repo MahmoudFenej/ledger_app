@@ -3,14 +3,16 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: ['main']
-
+    paths:
+      - 'packages/container/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    
+
+    defaults:
+      run:
+        working-directory: packages/container
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
