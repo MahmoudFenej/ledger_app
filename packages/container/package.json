@@ -15,6 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.57.0",
     "eslint-config-react-app": "^7.0.1",

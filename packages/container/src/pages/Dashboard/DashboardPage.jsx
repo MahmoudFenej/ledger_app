@@ -1,12 +1,12 @@
-import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { PageHeader, StatCard } from '../../shared/ui';
-import { Button } from '../../shared/ui';
-import { formatCurrency } from '../../shared/utils/formatters';
-import TransactionTable from '../../features/transactions/components/TransactionTable';
-import NewTransactionModal from '../../features/transactions/components/NewTransactionModal';
-import { useTransactions } from '../../features/transactions/services/transactionService';
+import { useSharedState } from 'auth_app/useSharedState';
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCustomers } from '../../features/customers/services/customerService';
+import NewTransactionModal from '../../features/transactions/components/NewTransactionModal';
+import TransactionTable from '../../features/transactions/components/TransactionTable';
+import { useTransactions } from '../../features/transactions/services/transactionService';
+import { Button, PageHeader, StatCard } from '../../shared/ui';
+import { formatCurrency } from '../../shared/utils/formatters';
 import './DashboardPage.css';
 
 export default function DashboardPage() {
@@ -14,6 +14,17 @@ export default function DashboardPage() {
   const { allCustomers } = useCustomers();
   const { transactions, addRecharge, recordPayment } = useTransactions();
   const [showNewTxModal, setShowNewTxModal] = useState(false);
+
+  const [{ isAuthenticated }] = useSharedState();
+  const location = useLocation();
+  useEffect(() => {
+    if (!isAuthenticated && location.pathname !== '/login') {
+      navigate('/login');
+    } else if (isAuthenticated && location.pathname === '/login') {
+      navigate('/');
+    }
+  }, [isAuthenticated, location, navigate]);
+
 
   const recentTransactions = useMemo(() => {
     return transactions.slice(0, 5);
