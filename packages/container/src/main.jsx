@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Sidebar from './shared/ui/Sidebar/Sidebar';
-import AppRoutes from './app/router/AppRoutes';
+import { AuthProvider } from './app/auth/AuthContext';
+import App from './App';
 import './index.css';
 import './App.css';
 
@@ -21,14 +21,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <div className="app-container">
-          <Sidebar />
-          <main className="app-content">
-            <AppRoutes />
-          </main>
-        </div>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <App />
+        </Router>
+      </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

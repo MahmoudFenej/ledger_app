@@ -1,15 +1,15 @@
 import React from 'react';
 import Sidebar from './shared/ui/Sidebar/Sidebar';
 import AppRoutes from './app/router/AppRoutes';
-import { useSharedState } from 'auth_app/useSharedState';
+import { useAuth } from './app/auth/AuthContext';
 import './App.css';
 
 export default function App() {
-  const [{ isAuthenticated }] = useSharedState();
+  const { isAuthenticated, signOut } = useAuth();
 
   return (
     <div className="app-container">
-      {isAuthenticated && <Sidebar />}
+      {isAuthenticated && <Sidebar onSignOut={signOut} />}
       <main className={`app-content ${!isAuthenticated ? 'no-sidebar' : ''}`}>
         <AppRoutes />
       </main>

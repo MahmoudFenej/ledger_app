@@ -6,6 +6,7 @@ import CustomerDetailPage from '../../pages/Customers/CustomerDetailPage';
 import TransactionsPage from '../../pages/Transactions/TransactionsPage';
 import SettingsPage from '../../pages/Settings/SettingsPage';
 import { withAuth, withGuest } from './PageHOC';
+import { useAuth } from '../auth/AuthContext';
 
 const Login = React.lazy(() => import('auth_app/Login'));
 
@@ -17,10 +18,12 @@ const AuthenticatedSettings = withAuth(SettingsPage);
 const GuestLogin = withGuest(Login);
 
 function AppRoutes() {
+  const { signIn } = useAuth();
+
   return (
     <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center', fontFamily: 'sans-serif' }}>Loading...</div>}>
       <Routes>
-        <Route path="/login" element={<GuestLogin />} />
+        <Route path="/login" element={<GuestLogin onSignIn={signIn} />} />
         <Route path="/" element={<AuthenticatedDashboard />} />
         <Route path="/customers" element={<AuthenticatedCustomers />} />
         <Route path="/customers/:id" element={<AuthenticatedCustomerDetail />} />

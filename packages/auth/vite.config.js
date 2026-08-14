@@ -10,7 +10,6 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './Login': './src/components/Login.jsx',
-        './useSharedState': './src/store/useSharedState.js',
       },
       shared: ['react', 'react-dom']
     })

@@ -98,3 +98,21 @@
   font-size: 0.6875rem;
   color: var(--color-text-muted);
 }
+.sidebar__signout {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar__signout:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}

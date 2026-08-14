@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { to: '/settings',     label: 'Settings',     icon: '⚙️' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onSignOut }) {
   return (
     <aside className="sidebar">
       {/* Brand */}
@@ -40,6 +40,9 @@ export default function Sidebar() {
           <span className="sidebar__user-name">Ayman</span>
           <span className="sidebar__user-role">Admin</span>
         </div>
+        <button className="sidebar__signout" onClick={onSignOut} title="Sign Out">
+          ⎋
+        </button>
       </div>
     </aside>
   );

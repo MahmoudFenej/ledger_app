@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import { useSharedState } from '../store/useSharedState';
 import './Login.css';
 
-const Login = () => {
-  const [, setSharedState] = useSharedState();
+const Login = ({ onSignIn }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'password') {
-      setSharedState({ isAuthenticated: true });
-    } else {
-      alert('Invalid username or password. Try admin / password');
+    if (onSignIn) {
+      onSignIn(username, password);
     }
   };
 
