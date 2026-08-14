@@ -5,6 +5,7 @@ on:
     branches: ['main']
     paths:
       - 'packages/container/**'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,12 +23,12 @@ jobs:
 
       - name: Build
         run: yarn build
-          
+
       - name: Deploy to Cloudflare
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: 'ledger-app'
-          directory: 'dist'
+          directory: 'packages/container/dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
