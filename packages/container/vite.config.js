@@ -15,8 +15,8 @@ export default defineConfig({
     federation({
       name: 'ledger_app',
       remotes: {
-        // auth_app: 'https://auth-app-dw2.pages.dev/assets/remoteEntry.js',
-        auth_app: 'http://localhost:5001/assets/remoteEntry.js',
+        auth_app: 'https://auth-app-dw2.pages.dev/assets/remoteEntry.js',
+        // auth_app: 'http://localhost:5001/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom']
     })
